@@ -1,0 +1,13 @@
+{
+  "name": "werewolf-bot",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "lowdb": "^6.0.1",
+    "nanoid": "^4.0.0",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
