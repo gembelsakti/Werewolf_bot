@@ -1,7 +1,7 @@
 {
   "name": "werewolf-bot",
   "version": "1.0.0",
-  "description": "Telegram Werewolf Bot",
+  "description": "Telegram Werewolf Bot Full Version",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
