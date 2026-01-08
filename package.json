@@ -1,14 +1,23 @@
 {
   "name": "werewolf-bot",
   "version": "1.0.0",
-  "description": "Telegram Werewolf Bot Full Version",
+  "description": "Telegram Werewolf Game Bot - Full Version",
   "main": "bot.js",
+  "type": "module",
   "scripts": {
     "start": "node bot.js"
   },
+  "keywords": [
+    "telegram",
+    "werewolf",
+    "game",
+    "bot"
+  ],
+  "author": "ChatGPT",
+  "license": "MIT",
   "dependencies": {
     "lowdb": "^6.0.1",
-    "nanoid": "^4.0.0",
+    "nanoid": "^4.0.2",
     "node-telegram-bot-api": "^0.61.0"
   }
 }
