@@ -1,13 +1,14 @@
 {
-  "name": "telegram-werewolf-bot",
-  "version": "4.0.0",
+  "name": "werewolf-bot",
+  "version": "1.0.0",
+  "description": "Telegram Werewolf Bot",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.63.0",
-    "lowdb": "^3.0.0",
-    "nanoid": "^5.0.0"
+    "lowdb": "^6.0.1",
+    "nanoid": "^4.0.0",
+    "node-telegram-bot-api": "^0.61.0"
   }
 }
