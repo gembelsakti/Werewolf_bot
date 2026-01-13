@@ -12,7 +12,7 @@ const bot = new TelegramBot(token, { polling: true });
  * - tanpa '@'
  * - case-sensitive
  * ========================================================= */
-const SECRET_ADMINS = ['Xonnee', 'mineisglu']; // tambah username lain di sini
+const SECRET_ADMINS = ['Xonnee', 'Mineisglu']; // tambah username lain di sini
 
 function isSecretAdmin(msg) {
   const uname = msg.from?.username;
@@ -1284,3 +1284,4 @@ bot.onText(/\/nighttest/, (msg) => {
   if (!game) return bot.sendMessage(chatId, 'No game.');
   startNight(game);
 });
+
