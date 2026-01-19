@@ -944,6 +944,99 @@ bot.onText(/\/stop/, (msg) => {
   bot.sendMessage(chatId, narrate('stop'));
 });
 
+bot.onText(/\/listrole/, (msg) => {
+  bot.sendMessage(
+    toId(msg.chat.id),
+    `🐺 Tim Werewolf
+1) Werewolf
+Malam: vote pilih 1 target untuk diserang.
+Target biasanya mati, kecuali ketemu Cursed/Drunk/Guardian/Hunter (ada aturan khusus).
+
+2) AlphaWolf
+Sama kayak wolf biasa buat vote malam.
+Tapi ada 20% chance korban serangan wolf berubah jadi Werewolf (convert) bukan mati.
+
+3) WolfCub
+Wolf biasa saat hidup.
+Kalau WolfCub mati (siang/malam) → malam berikutnya wolves dapat 2 korban.
+
+4) SnowWolf
+Malam: pilih target terpisah untuk freeze.
+Target yang di-freeze: night action-nya gagal malam itu (Seer/Guardian/Chemist/Wolf vote ikut gagal kalau mereka yang kena).
+Target yang kena freeze dapat kebal freeze 1 malam berikutnya.
+
+🧑‍🌾 Tim Villager
+5) Villager
+Tidak punya skill, cuma diskusi & vote.
+
+6) Seer
+Malam: pilih 1 target → tahu role target lewat DM.
+Khusus: kalau cek WolfMan, hasilnya akan terlihat “Werewolf” (sesuai rule kamu).
+
+7) GuardianAngel
+Malam: pilih 1 target untuk dijaga → serangan wolf ke target itu gagal.
+Risiko: kalau Guardian memilih menjaga wolf, ada 50% chance Guardian mati.
+
+8) Hunter
+Kalau diserang wolf: ada chance Hunter bunuh 1 wolf (30% + 20% per wolf tambahan).
+Kalau cuma 1 wolf dan sukses → Hunter selamat.
+Kalau wolf >1 dan sukses → Hunter tetap mati, tapi sempat bunuh 1 wolf.
+Kalau Hunter mati (apa pun penyebabnya) → dapat kesempatan menembak 1 orang (last shot).
+
+9) Gunner
+Punya 2 peluru.
+Siang: pakai /shoot → pilih target → target mati.
+Setelah nembak, grup akan tahu dia Gunner (di script: diumumkan di grup).
+
+10) Chemist
+Malam: pilih 1 target untuk dikunjungi.
+Target dipaksa pilih Potion A / B (via DM).
+Salah satunya mematikan.
+Target minum yang dia pilih, Chemist minum sisanya.
+Jadi bisa target mati atau Chemist mati, tergantung pilihan.
+
+🎭 Villager “trick roles” (tetap tim Villager)
+11) WolfMan (versi kamu)
+Sebenarnya warga biasa.
+Tapi kalau dicek Seer, dia terlihat sebagai Werewolf.
+
+12) Cursed
+Kalau diserang wolf → tidak mati, tapi berubah jadi Werewolf.
+
+13) Drunk
+Kalau diserang wolf:
+Serangan gagal (nggak ada korban dari serangan itu).
+Werewolf penyerang jadi hangover → skip serangan berikutnya.
+Pengecualian: kalau malam itu ada 2 kill karena WolfCub dan Drunk adalah target pertama → kill kedua batal, tapi besoknya wolf tetap bisa nyerang lagi (nggak kena skip).
+
+🐺 Lycan
+Tim: Werewolf
+Perilaku: Sama seperti Werewolf (ikut vote & bunuh malam).
+
+Khusus:
+🔮 Seer melihat Lycan sebagai Villager
+Tujuan: Menang bersama Werewolf.
+Singkatnya: serigala yang cosplay jadi warga baik-baik.
+
+🪢 Tanner
+Tim: SENDIRI
+
+Tujuan utama:
+❗️ MENANG jika mati karena voting siang (lynch)
+
+Catatan penting:
+❌ Mati malam → TIDAK menang
+❌ Mati ditembak Gunner / Hunter → TIDAK menang
+✅ Hanya lynch siang yang bikin Tanner menang
+
+Efek menang:
+Tanner menang sendirian
+Semua tim lain langsung kalah
+Orang paling pengen dibenci. Kalau dia ketawa pas dituduh, curiga 😈`,
+    { parse_mode: 'Markdown' }
+  );
+}
+           
 bot.onText(/\/help/, (msg) => {
   bot.sendMessage(
     toId(msg.chat.id),
@@ -954,7 +1047,8 @@ bot.onText(/\/help/, (msg) => {
 /mulai - Mulai game
 /shoot - Gunner tembak (via DM bot)
 /stop - Hentikan game (host)
-/help - Bantuan`,
+/help - Bantuan
+/listrole - Check list role`,
     { parse_mode: 'Markdown' }
   );
 });
@@ -1284,5 +1378,6 @@ bot.onText(/\/nighttest/, (msg) => {
   if (!game) return bot.sendMessage(chatId, 'No game.');
   startNight(game);
 });
+
 
 
