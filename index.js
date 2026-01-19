@@ -363,7 +363,7 @@ async function resolveDay(game) {
   if (game.players[victimId].role === 'Tanner') {
     await bot.sendMessage(
       game.chatId,
-      '🪢 *Tanner berhasil dilynch.* Dia menang sendirian. Yang lain? Ya… gitgud.',
+      '🪢 *Tanner berhasil dilynch.* Dia menang sendirian. Yang lain? Ya… gitu dah.',
       { parse_mode: 'Markdown' }
     );
     return endGame(game, 'Tanner');
@@ -1284,4 +1284,5 @@ bot.onText(/\/nighttest/, (msg) => {
   if (!game) return bot.sendMessage(chatId, 'No game.');
   startNight(game);
 });
+
 
