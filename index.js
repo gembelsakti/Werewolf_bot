@@ -1020,15 +1020,12 @@ Singkatnya: serigala yang cosplay jadi warga baik-baik.
 
 🪢 Tanner
 Tim: SENDIRI
-
 Tujuan utama:
 ❗️ MENANG jika mati karena voting siang (lynch)
-
 Catatan penting:
 ❌ Mati malam → TIDAK menang
 ❌ Mati ditembak Gunner / Hunter → TIDAK menang
 ✅ Hanya lynch siang yang bikin Tanner menang
-
 Efek menang:
 Tanner menang sendirian
 Semua tim lain langsung kalah
@@ -1378,6 +1375,7 @@ bot.onText(/\/nighttest/, (msg) => {
   if (!game) return bot.sendMessage(chatId, 'No game.');
   startNight(game);
 });
+
 
 
 
